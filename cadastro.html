@@ -1,44 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Voluntários</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Voluntários</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header> 
-        <h1>Cadastre-se como Voluntário</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projeto.html">Projeto</a></li>
-                <li><a href="cadastro.html">Cadastros</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Formulário de Cadastro</h2>
-            <form action="#" method="post">
-                <label for="nome">Nome Completo:</label><br>
-                <input type="text" id="nome" name="nome" required><br><br>
+  <header> 
+    <!-- ÚNICO H1 DA PÁGINA -->
+    <h1>Cadastre-se como Voluntário</h1>
 
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+    <nav>
+      <a class="logo" href="index.html" aria-label="Voltar para a página inicial">&#128153; Voluntários</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" onclick="toggleMenu()">☰</button>
+      <ul id="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projeto.html">Projeto</a></li>
+        <li><a href="cadastro.html" class="active">Cadastros</a></li>
+      </ul>
+    </nav>
+  </header>
 
-                <label for="telefone">Telefone:</label><br>
-                <input type="tel" id="telefone" name="telefone" required><br><br>
+  <section class="hero hero-cadastro">
+    <div class="hero-content">
+      <!-- Era h1; rebaixado para h2 -->
+      <h2>Junte-se a nós e faça a diferença!</h2>
+      <p>Ao se cadastrar como voluntário, você estará contribuindo para transformar vidas e fortalecer comunidades. Preencha o formulário abaixo para começar sua jornada conosco.</p>
+    </div>
+  </section>
 
-                <label for="interesses">Áreas de Interesse:</label><br>
-                <select id="interesses" name="interesses" multiple required>
-                    <option value="educacao">Educação</option>
-                    <option value="saude">Saúde</option>
-                    <option value="meio_ambiente">Meio Ambiente</option>
-                    <option value="assistencia_social">Assistência Social</option>
-                </select><br><br>
+  <main>
+    <section class="signup-section">
+      <h2>Formulário de cadastro de voluntários</h2>
 
-                <input type="submit" value="Cadastrar">
-            </form>
-        </section>
+      <!-- Mensagem de sucesso: escondida por padrão, com aria-live -->
+      <div class="success-message" id="successMessage" aria-live="polite" hidden>
+        Cadastro realizado com sucesso! Obrigado por se juntar a nós como voluntário.
+      </div>
+
+      <form id="volunteerForm" onsubmit="handleSubmit(event)">
+        <fieldset>
+          <legend>Dados pessoais</legend>
+
+          <div class="form-group">
+            <label for="nome">Nome completo *</label>
+            <input type="text" id="nome" name="nome" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="telefone">Telefone *</label>
+            <input
+              type="tel"
+              id="telefone"
+              name="telefone"
+              placeholder="(11) 99999-9999"
+              pattern="^\(?\d{2}\)?\s?\d{4,5}-\d{4}$"
+              required
+              autocomplete="tel"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="idade">Idade *</label>
+            <input type="number" id="idade" name="idade" min="18" max="70" required>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Disponibilidade</legend>
+          <div class="form-group">
+            <label for="disponibilidade">Dias disponíveis para voluntariado *</label>
+            <select id="disponibilidade" name="disponibilidade" required>
+              <option value="">Selecione</option>
+              <option value="fins_de_semana">Fins de semana</option>
+              <option value="semanalmente">Semanalmente</option>
+              <option value="mensalmente">Mensalmente</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn">Enviar cadastro</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Organização Voluntariado. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

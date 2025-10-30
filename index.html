@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organização Voluntáriado</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organização Voluntariado</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header> 
-        <h1>Como é a nossa Organização</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="projeto.html">Projeto</a></li>
-                <li><a href="cadastro.html">Cadastros</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Quem somos</h2>
-            <p>Somos uma organização dedicada a promover o voluntariado e apoiar comunidades carentes.</p>
-            <p>Nossa missão é conectar pessoas dispostas a ajudar com aqueles que precisam de apoio em diversas áreas, como educação, saúde, meio ambiente e assistência social.</p>
-            <p>Explore nosso site para saber mais sobre nossos projetos, como se cadastrar como voluntário ou solicitar ajuda.</p>
-            <img src="imagens/voluntario.jpg" alt="Voluntários ajudando a comunidade" width="600" height="400">
-        </section>
-        <section>
-            <h3>Fale conosco!</h3>
-            <address>
-                <p> Endereço: Rua Das Flores, 123 - São Paulo - SP - CEP. 01234-576</p>
-                <p> Telefone: (11) 98765-4321</p>
-                <p> Email: contato@organizaçãovoluntariado.org</p>
-            </address>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Organização Voluntariado. Todos os direitos reservados.</p>
-    </footer>
+  <header>
+    <!-- TÍTULO PRINCIPAL DA PÁGINA (único h1) -->
+    <h1>Organização Voluntariado</h1>
+
+    <nav>
+      <a class="logo" href="index.html" aria-label="Voltar para a página inicial">&#128153; Voluntários</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" onclick="toggleMenu()">☰</button>
+      <ul id="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projeto.html">Projeto</a></li>
+        <li><a href="cadastro.html">Cadastros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <!-- Rebaixado para h2 (pode ser estilizado como “título gigante”) -->
+      <h2>Bem-vindos!</h2>
+      <p>Estamos todos aqui para fazer o bem!</p>
+    </div>
+  </section>
+
+  <main>
+    <section>
+      <h2>Quem somos</h2>
+      <p>Somos uma organização dedicada a promover o voluntariado e apoiar comunidades carentes.</p>
+      <p>Nossa missão é conectar pessoas dispostas a ajudar com aqueles que precisam de apoio em diversas áreas, como educação, saúde, meio ambiente e assistência social.</p>
+      <p>Explore nosso site para saber mais sobre nossos projetos, como se cadastrar como voluntário ou solicitar ajuda.</p>
+      <img src="imagens/voluntario.jpg" alt="Voluntários ajudando a comunidade" width="600" height="400">
+    </section>
+
+    <section>
+      <h3>Fale conosco!</h3>
+      <address>
+        <p>Endereço: Rua das Flores, 123 — São Paulo — SP — CEP 01234-576</p>
+        <p>Telefone: (11) 98765-4321</p>
+        <p>E-mail: contato@organizacao-voluntariado.org</p>
+      </address>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Organização Voluntariado. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
 </html>
